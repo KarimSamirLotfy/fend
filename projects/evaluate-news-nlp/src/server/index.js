@@ -1,7 +1,7 @@
 var path = require('path')
 const express = require('express')
 var cors = require("cors");
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 
 // use it before all route definitions
@@ -12,7 +12,7 @@ console.log(`Your API key is serverside ${API_KEY}`);
 const app = express()
 
 app.use(express.static('dist'))
-app.use(cors({ origin: "http://localhost:8080" }));
+app.use(cors({ origin: ["http://localhost:8080", "http://127.0.0.1:5500"] }));
 app.use(express.json({ limit: "1mb" }));
 
 console.log(__dirname)
@@ -36,7 +36,9 @@ app.post('/test', function async (req, res) {
     //   message: "this is a message",
     //   time: "now",
     // };
-    res.send(mockAPIResponse)
+    res.send({
+        message:'server is running'
+    })
 })
 
 async function sendRequest(text){

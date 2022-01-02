@@ -32,17 +32,17 @@ async function  handleSubmit(event) {
     })
     .catch((error) => console.log("error", error));
 
-//   console.log("::: Form Submitted :::");
-//   fetch("http://localhost:8081/test", {
-//     method: "POST", // *GET, POST, PUT, DELETE, etc.
-//     headers: { "Content-Type": "application/json" },
+  console.log("::: Form Submitted :::");
+  fetch("http://localhost:8081/test", {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    headers: { "Content-Type": "application/json" },
 
-//     body: JSON.stringify({ text: formText }), // body data type must match "Content-Type" header
-//   })
-//     .then((res) => res.json())
-//     .then(function (res) {
-//       document.getElementById("results").innerHTML = res.message;
-//     });
+  })
+    .then((res) => res.json())
+    .then(function (res) {
+        console.log('my server sentds HI', res.message)
+      document.getElementById("my-server").innerHTML = res.message;
+    });
 }
 
 export { handleSubmit };
