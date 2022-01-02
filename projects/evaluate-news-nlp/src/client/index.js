@@ -13,3 +13,5 @@ console.log(checkForName);
 console.log(`YOUR API KEY IS    ${process.env.API_KEY}`);
 
 console.log("CHANGE!!");
+
+export { checkForName, handleSubmit };
